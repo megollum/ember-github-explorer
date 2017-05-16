@@ -1,0 +1,10 @@
+<h1>Github Explorer</h1>
+<hr>
+<p>This is the Github explorer for all of our favorite developers</p>
+<ul>
+    {{#each model.devs as |dev|}}
+    <li>{{#link-to "user" dev.login}} {{dev.name}} {{/link-to}}
+    </li>
+    {{/each}}
+</ul>
+<p>{{model.todaysDate}}</p>
