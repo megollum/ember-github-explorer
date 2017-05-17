@@ -8,3 +8,13 @@
 .pointer-cursor{
     cursor: pointer;
 }
+
+.position-relative {
+    position: relative;
+}
+
+.inline-spinner {
+    .ember-cli-spinner{
+        position: absolute;
+    }
+}
