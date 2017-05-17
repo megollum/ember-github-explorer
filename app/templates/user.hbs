@@ -2,9 +2,9 @@
     <div class="col-md-3">
         <div class="well">
             <p class="text-center">
-                {{#link-to "user" model}}<img src={{model.avatar_url}} style="width:140px;"> {{/link-to}}
+                {{#link-to "user" model.login}}<img src={{model.avatar_url}} style="width:140px;"> {{/link-to}}
             </p>
-            <h4>{{#link-to "user" model}} {{model.name}} {{/link-to}}</h4>
+            <h4>{{#link-to "user" model.login}} {{if model.name model.name model.login}} {{/link-to}}</h4>
             <p>
                 {{model.company}} <br> {{model.location}} <br> {{model.email}} <br>
             </p>

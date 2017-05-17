@@ -3,16 +3,16 @@
         {{#link-to "index"}} Devs {{/link-to}}
     </li>
     <li class="breadcrumb-item">
-        {{#link-to "user" model.user.login}} {{model.user.name}} {{/link-to}}
+        {{#link-to "user" model.user.login}} {{if model.user.name model.user.name model.user.login}} {{/link-to}}
     </li>
     <li class="breadcrumb-item active">Repositories</li>
 </ol>
 <table class="table table-striped">
     <tbody>
         {{#each model.repositories as |r|}}
-        <tr>
-            <td>{{r.name}}</td>
-        </tr>
+            <tr>
+                <td> {{#link-to "user.repository" r.name}} {{r.name}} {{/link-to}}</td>
+            </tr>
         {{/each}}
     </tbody>
 </table>

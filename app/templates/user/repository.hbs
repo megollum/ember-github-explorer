@@ -1,0 +1,28 @@
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        {{#link-to "index"}} Devs {{/link-to}}
+    </li>
+    <li class="breadcrumb-item">
+        {{#link-to "user" model.user.login}} {{if model.user.name model.user.name model.user.login}} {{/link-to}}
+    </li>
+    <li class="breadcrumb-item">
+        {{#link-to "user.repositories"}} Repositories {{/link-to}}
+    </li>
+    <li class="breadcrumb-item active">{{model.repository.name}}</li>
+</ol>
+<h1>{{if model.user.name model.user.name model.user.login}} Repo</h1>
+<p>{{model.repository.description}}</p>
+<ul>
+    <li>Language : {{model.repository.language}}</li>
+    <li>Watchers : {{model.repository.watchers}}</li>
+    <li>Open Issues : {{model.repository.open_issues}}</li>
+    <li>Clone : {{model.repository.clone_url}}</li>
+    <li>Web : <a href={{model.repository.html_url}} target="_blank">{{model.repository.html_url}}</a></li>
+</ul>
+<hr>
+<ul class="list-inline">
+    <li>{{#link-to "user.repository.issues"}} Issues {{/link-to}}</li>
+    <li>{{#link-to "user.repository.forks"}} Forks {{/link-to}}</li>
+    <li>{{#link-to "user.repository.commits"}} Commits {{/link-to}}</li>
+</ul>
+{{outlet}}
