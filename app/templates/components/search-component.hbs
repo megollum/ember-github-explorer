@@ -1,0 +1,19 @@
+<div class="input-group">
+    {{input class="form-control" type="text" key-up="performSearch" placeholder="Input search term..."}}
+    <span class="input-group-addon">
+        {{fa-icon "fa-search"}}
+    </span>
+</div>
+<div id="search-component" class="position-relative">
+    {{#ember-cli-spinner 
+        id="search-component" 
+        type="cube-grid" 
+        bgColor="transparent" 
+        color="blue" 
+        class="inline-spinner"}}
+        <h3>Loading...</h3>
+    {{/ember-cli-spinner}}
+</div>
+{{#if result}}
+  {{yield result}}
+{{/if}}

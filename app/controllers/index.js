@@ -1,9 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-    gitModel: null,
-
-    gitResult: Ember.computed('gitModel', function(){
-        return this.get('gitModel');
-    })
+    actions: {
+        searchCall(value){
+            console.log(value);
+            let url= "https://api.github.com/search/users?q="+value;
+            return Ember.$.getJSON(url);
+        },
+        navigateToUser(login){
+            this.transitionToRoute("user", login);
+        }        
+    }
 });

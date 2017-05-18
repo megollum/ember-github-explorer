@@ -18,3 +18,31 @@
         position: absolute;
     }
 }
+
+.text-24bold{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.margin-top20 {
+    margin-top: 20px;
+}
+
+.git-user-result{
+    border-bottom: 1px solid #cbcbcb;
+    padding: 10px;
+    &:first-child{
+        border-top: 1px solid #cbcbcb;
+    }
+    &:hover{
+        background-color: darken(white, 5);
+    }
+    .image{
+        height: 40px;
+    }
+    .login {
+        line-height: 40px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+}

@@ -1,38 +1,17 @@
 <h1>Github Explorer</h1>
 <hr>
 <p>This is the Github explorer for all of our favorite developers</p>
-<div class="input-group">
-    {{input class="form-control" type="text" key-up="performSearch" placeholder="Input search term..."}}
-    <span class="input-group-addon">
-        {{fa-icon "fa-search"}}
-    </span>
-</div>
-<div style="position:relative; min-height: 400px;">
-    <div id="123">
-        {{#ember-cli-spinner id="123" type="cube-grid" bgColor="transparent" color="black" class="inline-spinner"}}
-            <h3>Loading...</h3>
-        {{/ember-cli-spinner}}
-        {{#if gitResult.items.length}}
-        <table class="table table-striped" style="margin-top: 20px;">
-            <thead>
-                <tr>
-                    <th style="width: 60px">Avatar</th>
-                    <th>Login name</th>
-                </tr>
-            </thead>
-            <tbody>
-                {{#each gitResult.items as |item|}} {{#link-to "user" item.login tagName="tr" class="pointer-cursor"}}
-                <td class="text-center">
-                    <img src={{item.avatar_url}} alt="" class="img-circle" style="width:50px">
-                </td>
-                <td style="vertical-align: middle;">
-                    {{item.login}}
-                </td>
-                {{/link-to}} {{/each}}
-            </tbody>
-        </table>
-        {{else}} {{#if gitResult}}
-        <h2 class="text-center">No result</h2>
-        {{/if}} {{/if}}
+
+{{#search-component onSearch=(action "searchCall") as |response|}}
+    <div class="margin-top20">
+        {{#if response.items.length}}
+            {{#each response.items as |item|}}
+                {{user-nav-item user=item tagName="div" class="git-user-result" action="navigateToUser"}}
+            {{/each}}
+        {{else}}
+            <div class="text-center text-24bold">
+                No users found
+            </div>
+        {{/if}}
     </div>
-</div>
+{{/search-component}}

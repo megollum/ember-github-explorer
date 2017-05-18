@@ -1,0 +1,12 @@
+{{#link-to "user" user.login}}
+    <div class="row">
+        <div class="col-xs-2 text-center">
+            <img src={{user.avatar_url}} class="img-circle image" alt="">
+        </div>
+        <div class="col-xs-10">
+            <div class="login">
+                {{user.login}}
+            </div>
+        </div>
+    </div>
+{{/link-to}}
