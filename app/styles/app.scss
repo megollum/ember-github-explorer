@@ -1,11 +1,35 @@
-
 @import "ember-bootstrap/bootstrap";
+.index-header {
+    text-align: center;
+    font-size: 4em;
+    background-color: black;
+    color: white;
+    line-height: 2;
+    transition: linear .5s line-height;
+    &.extended {
+        line-height: 4;
+    }
+}
+
+.heading {
+    margin: 0;
+    padding: 0;
+    line-height: 2;
+    font-size: 30px;
+    overflow: hidden;
+    max-height: 0;
+    transition: linear .5s max-height;
+    &.appear {
+        max-height: 60px;
+        opacity: 1.0;
+    }
+}
 
 .navbar {
     border-radius: 0;
 }
 
-.pointer-cursor{
+.pointer-cursor {
     cursor: pointer;
 }
 
@@ -14,12 +38,12 @@
 }
 
 .inline-spinner {
-    .ember-cli-spinner{
+    .ember-cli-spinner {
         position: absolute;
     }
 }
 
-.text-24bold{
+.text-24bold {
     font-size: 24px;
     font-weight: bold;
 }
@@ -28,16 +52,16 @@
     margin-top: 20px;
 }
 
-.git-user-result{
+.git-user-result {
     border-bottom: 1px solid #cbcbcb;
     padding: 10px;
-    &:first-child{
+    &:first-child {
         border-top: 1px solid #cbcbcb;
     }
-    &:hover{
+    &:hover {
         background-color: darken(white, 5);
     }
-    .image{
+    .image {
         height: 40px;
     }
     .login {

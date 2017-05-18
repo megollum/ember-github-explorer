@@ -7,12 +7,15 @@ export default Ember.Component.extend({
             this.set("result", undefined);
             if (value) {
                 Ember.run.debounce(this, this._doSearch, { value: value }, 1000);
+            } else {
+                this.onSearchComplete(null);
             }
         }
     },
     _doSearch: function (args) {
         this.get('spinner').show('search-component');
         this.onSearch(args.value).then((data) => {
+            this.onSearchComplete(data);
             this.set('result', data);
             this.get('spinner').hide('search-component');
         });

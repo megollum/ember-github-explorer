@@ -35,6 +35,7 @@
     "ember-cli-sri": "^2.1.0",
     "ember-cli-uglify": "^1.2.0",
     "ember-cli-underscore": "0.0.3",
+    "ember-crumbly": "^2.0.0-alpha.1",
     "ember-data": "^2.13.0",
     "ember-export-application-global": "^2.0.0",
     "ember-font-awesome": "^3.0.5",

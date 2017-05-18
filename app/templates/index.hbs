@@ -1,17 +1,17 @@
-<h1>Github Explorer</h1>
-<hr>
-<p>This is the Github explorer for all of our favorite developers</p>
+<header class="index-header{{if extended " extended" ""}}">
+    {{fa-icon "fa-github"}} Github Explorer
+</header>
+<div class="container margin-top20">
+    <div class="text-center heading{{if extended " appear"}}">Explore your favorite github developers</div>
 
-{{#search-component onSearch=(action "searchCall") as |response|}}
+    {{#search-component onSearch=(action "searchCall") onSearchComplete=(action "toggleNavbar") as |response|}}
     <div class="margin-top20">
-        {{#if response.items.length}}
-            {{#each response.items as |item|}}
-                {{user-nav-item user=item tagName="div" class="git-user-result" action="navigateToUser"}}
-            {{/each}}
-        {{else}}
-            <div class="text-center text-24bold">
-                No users found
-            </div>
+        {{#if response.items.length}} {{#each response.items as |item|}} {{user-nav-item user=item tagName="div" class="git-user-result"
+        action="navigateToUser"}} {{/each}} {{else}}
+        <div class="text-center text-24bold">
+            No users found
+        </div>
         {{/if}}
     </div>
-{{/search-component}}
+    {{/search-component}}
+</div>

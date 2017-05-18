@@ -1,16 +1,1 @@
-<div id="full-page">
-    {{#bs-navbar type='inverse' fluid='' as |navbar|}}
-    <div class="navbar-header">
-        {{navbar.toggle}} {{#link-to "index" class="navbar-brand"}} Git Explorer {{/link-to}}
-    </div>
-    {{#navbar.content}} {{#navbar.nav as |nav|}} {{#nav.item}}{{#nav.link-to "index"}}Home{{/nav.link-to}}{{/nav.item}} {{/navbar.nav}}
-    {{/navbar.content}} {{/bs-navbar}}
-
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                {{outlet}}
-            </div>
-        </div>
-    </div>
-</div>
+{{outlet}}
