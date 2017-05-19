@@ -18,8 +18,9 @@
     }
     .detail {
         display: block;
-        font-size: 18px;
+        font-size: 18px;   
         padding: 5px 20px;
+        word-wrap: break-word;
     }
     .list-group {
         border-radius: 0;
@@ -53,6 +54,19 @@
             font-size: 18px;
             font-weight: bold;
             margin-top:5px;
+            word-wrap: break-word;
         }
+    }
+}
+
+.white-container{
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px 30px 30px;
+}
+
+.special-borders {
+    tr:first-child td{
+        border-top: none;
     }
 }

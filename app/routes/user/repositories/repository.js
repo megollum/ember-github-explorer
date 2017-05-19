@@ -5,10 +5,12 @@ export default Ember.Route.extend({
         return this.get("crumbConfig");
     }),
     model(params) {
-        return params
+        let user = this.modelFor("user");
+        let url = "https://api.github.com/repos/" + user.login + "/" + params.reponame;
+        return Ember.$.getJSON(url);
     },
     afterModel(model) {
-        this.set("crumbConfig", { title: model.reponame });
+        this.set("crumbConfig", { title: model.name });
 
     }
 });

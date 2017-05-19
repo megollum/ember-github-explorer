@@ -1,0 +1,8 @@
+<div class="clearfix">
+    <b>Labels: </b>
+    {{#each labels as |label|}}
+        <span style="font-size: 12px; padding: 2px 4px; border-radius: 2px; color:white; background-color:#{{label.color}}">{{label.name}}</span>
+    {{else}}
+        No labels
+    {{/each}}
+</div>

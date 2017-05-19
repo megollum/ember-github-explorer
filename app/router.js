@@ -9,7 +9,9 @@ const Router = Ember.Router.extend({
 Router.map(function () {
   this.route('user', { path: '/user/:login' }, function () {
     this.route('repositories', function() {
-      this.route('repository', { path:'/:reponame'});
+      this.route('repository', { path:'/:reponame'}, function() {
+        this.route('issues');
+      });
     });
   });
 });

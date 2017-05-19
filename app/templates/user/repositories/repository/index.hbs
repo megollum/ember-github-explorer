@@ -1,0 +1,12 @@
+<div class="text-center">
+    <span>{{fa-icon "fa-code"}} {{model.language}} {{tooltip-on-element delay=500 delayOnChange=true text="Language"}}</span>    &nbsp;&nbsp;
+    <span>{{fa-icon "fa-star"}} {{model.stargazers_count}} {{tooltip-on-element delay=500 delayOnChange=true text="Stargazers"}}</span>    &nbsp;&nbsp;
+    <span>{{fa-icon "fa-code-fork"}} {{model.forks_count}} {{tooltip-on-element delay=500 delayOnChange=true text="Forks"}}</span>    &nbsp;&nbsp;
+    <span>{{fa-icon "fa-eye"}} {{model.watchers_count}} {{tooltip-on-element delay=500 delayOnChange=true text="Watchers"}}</span>
+</div>
+<hr>
+<div class="list-group">
+    {{#link-to "user.repositories.repository.issues" class="list-group-item"}} 
+        {{fa-icon "fa-exclamation-circle"}} Issues <span class="badge">{{model.open_issues_count}}</span>
+    {{/link-to}}
+</div>

@@ -1,0 +1,44 @@
+
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <th style="width:120px;" class="text-center">Submitted by</th>
+            <th>Info</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each model as |issue|}}
+            <tr>
+                <td>
+                    <div class="text-center" style="margin-top:10px;">
+                        {{#link-to "user" issue.user.login}}                        
+                            <img src={{issue.user.avatar_url}} style="width: 60px;" class="img-circle" alt={{issue.user.login}}> 
+                        {{/link-to}}                                               
+                    </div>
+                    <div class="text-center">
+                        {{#link-to "user" issue.user.login}}
+                            {{issue.user.login}}
+                        {{/link-to}}
+                    </div>
+                    <br>
+                    <div class="text-center">
+                        {{moment-from-now issue.created_at}}
+                    </div>
+                </td>
+                <td>
+                    <h4>{{issue.title}} (<a href={{issue.html_url}} target="_blank">View on github</a>)</h4>
+                    <hr style="margin: 6px 0">
+                    {{git-labels labels=issue.labels}}
+                    <hr style="margin: 6px 0">
+                    <small>{{issue.body}}</small>
+                </td>
+            </tr>
+        {{else}}
+            <tr>
+                <td colspan="2" class="text-center">
+                    <h4>Good, no issues, go back to {{#link-to "user.repositories.repository" user.login repository.name}}repository{{/link-to}}</h4>
+                </td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
