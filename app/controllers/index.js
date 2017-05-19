@@ -1,20 +1,23 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+    init() {
+        this.set('_collapsed', null);
+    },
     _collapsed: null,
-    extended: Ember.computed("_collapsed", function(){
+    extended: Ember.computed("_collapsed", function () {
         return !this.get("_collapsed");
     }),
     actions: {
-        searchCall(value){
-            let url= "https://api.github.com/search/users?q="+value;
+        searchCall(value) {
+            let url = "https://api.github.com/search/users?q=" + value;
             return Ember.$.getJSON(url);
         },
-        navigateToUser(login){
+        navigateToUser(login) {
             this.transitionToRoute("user", login);
         },
-        toggleNavbar(value){
+        toggleNavbar(value) {
             this.set('_collapsed', value);
-        }     
+        }
     }
 });

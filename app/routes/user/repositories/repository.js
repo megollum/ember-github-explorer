@@ -1,9 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-    user: this.modelFor('user'),
+    breadCrumb: Ember.computed("crumbConfig", function () {
+        return this.get("crumbConfig");
+    }),
     model(params) {
-        var url = "https://api.github.com/repos/" + this.get("user").login + "/" +params.reponame;
-        return Ember.$.getJSON(url);
+        return params
+    },
+    afterModel(model) {
+        this.set("crumbConfig", { title: model.reponame });
+
     }
 });

@@ -1,4 +1,8 @@
-<li>{{#link-to 'index'}}Devs{{/link-to}}</li>
+<li>
+  {{#link-to 'index'}}
+    {{fa-icon "fa-github"}} Github explorer
+  {{/link-to}}
+</li>
 {{#each routeHierarchy as |route|}}
   {{#if hasBlock}}
     {{yield this route}}

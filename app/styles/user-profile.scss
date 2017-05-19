@@ -1,0 +1,58 @@
+.user-profile {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px 30px;
+    .image {
+        width: 100%;
+        max-width: 150px;
+    }
+    .login {
+        display: block;
+        padding-top: 10px;
+        font-size: 24px;
+        font-weight: bold;
+    }
+    .location {
+        display: block;
+        color: gray;
+    }
+    .detail {
+        display: block;
+        font-size: 18px;
+        padding: 5px 20px;
+    }
+    .list-group {
+        border-radius: 0;
+        .list-group-item {
+            border: none;
+            border-radius: 0;
+            font-size: 18px;
+            &.active {
+                background-color: darken(lightblue, 30%);
+            }
+        }
+    }
+}
+
+.popular-repos {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px 30px 30px;
+    .repo {
+        border-radius: 4px;
+        border: 1px solid lightgray;
+        margin-top: 15px;
+        padding: 15px 30px;
+        &:hover{
+            background-color: darken(white, 8%);
+        }
+        hr{
+            margin: 15px 0;
+        }
+        header{
+            font-size: 18px;
+            font-weight: bold;
+            margin-top:5px;
+        }
+    }
+}

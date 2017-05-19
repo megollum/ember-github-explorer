@@ -1,0 +1,40 @@
+<div class="user-profile">
+    <div class="text-center">
+        <img src={{user.avatar_url}} alt="" class="img-circle image">
+        <span class="login">{{user.login}}</span>
+        <span class="location">{{if user.location user.location "Location not provided"}}</span>
+    </div>
+    <hr>
+    <div>
+        <span class="detail">
+            {{fa-icon "fa-user"}} <b>Name:</b> {{if user.name user.name "Not provided"}}
+        </span>
+        <span class="detail">
+            {{fa-icon "fa-building"}} <b>Company:</b> {{if user.company user.company "Not provided"}}
+        </span>
+        <span class="detail">
+            {{fa-icon "fa-rss"}} <b>Blog:</b> 
+            {{#if user.blog}}
+                <a href={{user.blog}} target="_blank">{{user.blog}}</a>
+            {{else}}
+                Not provided
+            {{/if}}
+        </span>
+        <span class="detail">
+            {{fa-icon "fa-github"}} <b>Github:</b> 
+            {{#if user.html_url}}
+                <a href={{user.html_url}} target="_blank">{{user.html_url}}</a>
+            {{else}}
+                Not provided
+            {{/if}}
+        </span>
+    </div>
+    <hr>
+    <div>
+        <div class="list-group">
+            {{#link-to "user.repositories" class="list-group-item"}}
+                {{fa-icon "fa-code-fork"}} Repositories
+            {{/link-to}}
+        </div>
+    </div>
+</div>

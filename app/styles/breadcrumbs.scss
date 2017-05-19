@@ -1,0 +1,20 @@
+.custom-breadcrumbs {
+    height: 50px;
+    background-color: black;
+    border-radius: 0;
+    margin-bottom: 0;
+    li {
+        height: 36px;
+        line-height: 36px;
+        font-size: 18px;
+        color: darken(white, 30%);
+        a {
+            color: darken(lightblue, 30%);
+            text-decoration: none;
+            transition: linear .5s color;
+            &:hover {
+                color: white;
+            }
+        }
+    }
+}

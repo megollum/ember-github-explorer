@@ -1,8 +1,25 @@
-<h2>{{if model.name model.name model.login}}'s Github</h2>
-<hr>
-<ul>
-    <li>{{#link-to "user.repositories"}} Repositories {{/link-to}}
-    </li>
-    <li><a href="#">News and Events</a></li>
-    <li><a href="#">Gists</a></li>
-</ul>
+<div class="popular-repos">
+    <h3>Popular Repositories</h3>
+    <hr>
+    <div class="row">
+        {{#each popularRepos as |item index|}}
+        <div class="col-sm-6">
+            <div class="repo" {{action "goToRepo" item bubbles=false}}>
+                <header>
+                    {{item.name}} (<a href={{item.html_url}} {{action "goToGitRepo" item.html_url bubbles=false}}>{{item.full_name}}</a>)
+                </header>
+                <hr>
+                <div>
+                    <b>Description: </b> {{item.description}}
+                </div>
+                <hr>
+                <div>
+                    {{fa-icon "fa-code"}} {{item.language}} &nbsp;&nbsp;&nbsp;&nbsp; 
+                    {{fa-icon "fa-star"}} {{item.stargazers_count}} &nbsp;&nbsp;&nbsp;&nbsp;
+                    {{fa-icon "fa-code-fork"}} {{item.forks_count}} &nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+            </div>
+        </div>
+    {{/each}}
+    </div>
+</div>

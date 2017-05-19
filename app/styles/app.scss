@@ -1,4 +1,13 @@
 @import "ember-bootstrap/bootstrap";
+@import "breadcrumbs";
+@import "user-profile";
+.gray-background {
+    background-color: darken(white, 8%);
+    padding: 30px;
+    height: calc(100vh - 50px);
+    overflow: auto;
+}
+
 .index-header {
     text-align: center;
     font-size: 4em;

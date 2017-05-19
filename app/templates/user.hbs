@@ -1,40 +1,10 @@
-{{#bs-navbar type='inverse' fluid='' class="text-center" as |navbar|}}
-<div class="navbar-header">
-    {{#link-to "index" class="navbar-brand"}} Git Explorer {{/link-to}}
-</div>
-{{/bs-navbar}}
-<div class="container">
+{{bread-crumbs tagName="ol" class="custom-breadcrumbs" linkable=true}}
+<div class="container-fluid gray-background">
     <div class="row">
-        <div class="col-md-3">
-            <div class="well">
-                <p class="text-center">
-                    {{#link-to "user" model.login}}<img src={{model.avatar_url}} style="width:140px;"> {{/link-to}}
-                </p>
-                <h4>{{#link-to "user" model.login}} {{if model.name model.name model.login}} {{/link-to}}</h4>
-                <p>
-                    {{model.company}} <br> {{model.location}} <br> {{model.email}} <br>
-                </p>
-                <hr>
-                <table class="table table-striped">
-                    <tbody>
-                        <tr>
-                            <td>Followers:</td>
-                            <td>{{model.followers}}</td>
-                        </tr>
-                        <tr>
-                            <td>Repositories:</td>
-                            <td>{{model.public_repos}}</td>
-                        </tr>
-                        <tr>
-                            <td>Gists:</td>
-                            <td>{{model.public_gists}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        <div class="col-sm-4">
+            {{user-profile-side user=model}}
         </div>
-        <div class="col-md-8">
-            {{bread-crumbs tagName="ol" outputStyle="bootstrap" linkable=true}} 
+        <div class="col-sm-8">
             {{outlet}}
         </div>
     </div>
